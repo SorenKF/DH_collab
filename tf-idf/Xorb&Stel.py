@@ -99,22 +99,22 @@ searchQuery = [
 
 #function call
 
-rawOutput, trimmedOutput = regex_search("C:/Users/Stell/Documents/Digital Humanities/18" , searchQuery)
+rawOutput, trimmedOutput = regex_search("C:/Users/Stell/Downloads/OB_FULL" , searchQuery)
 
-# Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter('multiple_results.xlsx', engine='xlsxwriter')
+# # Create a Pandas Excel writer using XlsxWriter as the engine.
+# writer = pd.ExcelWriter('multiple_results.xlsx', engine='xlsxwriter')
 
-# write the TRIMMED  output (only containing search hits) to a human friendly files
-trimmedOutput.to_csv('trimmed_results.tsv', sep="\t") # index_label='file_id' 
-trimmedOutput.to_excel(writer, sheet_name='trimmed_results')
-rawOutput.to_excel(writer, sheet_name='raw_results')
-writer.save()
+# # write the TRIMMED  output (only containing search hits) to a human friendly files
+# trimmedOutput.to_csv('results_inspect.tsv', sep="\t") # index_label='file_id' 
+# trimmedOutput.to_excel(writer, sheet_name='blabla')
+# rawOutput.to_excel(writer, sheet_name='raw_blabla')
+# writer.save()
 
 
-# rawOutput.to_csv('results_xorb_final.tsv', sep="\t", index_label='file_id')
-# rawOutput.to_excel('results_xorb_final.xlsx', index_label='file_id')
+#trimmedOutput.to_csv('freq_dict_inspect2.tsv', sep="\t", index_label='file_id')
+trimmedOutput.to_excel('freq_dict.xlsx', index_label='file_id')
 
-df_results = pd.read_excel("results_xorb_final.xlsx")
+df_results = pd.read_excel("freq_dict.xlsx")
 
 def get_tf_idf(final_df, freq_df, term):
     """
@@ -143,15 +143,15 @@ final_df['text_length'] = df_results['text_length']
 
 freq_df = df_results
 
-final_df = get_tf_idf(final_df, freq_df, "drunk")
+final_df = get_tf_idf(final_df, freq_df, 'drunk')
 final_df = get_tf_idf(final_df, freq_df, 'beer')
 final_df = get_tf_idf(final_df, freq_df, 'intoxicat')
-#final_df = get_tf_idf(final_df, freq_df, 'temperance')
+final_df = get_tf_idf(final_df, freq_df, 'temperance')
 final_df = get_tf_idf(final_df, freq_df, 'liquor')
-#final_df = get_tf_idf(final_df, freq_df, 'alcohol')
+final_df = get_tf_idf(final_df, freq_df, 'alcohol')
 final_df = get_tf_idf(final_df, freq_df, 'brandy')
-#final_df = get_tf_idf(final_df, freq_df, 'booz')
-#final_df = get_tf_idf(final_df, freq_df, 'drunkard')
+final_df = get_tf_idf(final_df, freq_df, 'booz')
+final_df = get_tf_idf(final_df, freq_df, 'drunkard')
 #final_df = get_tf_idf(final_df, freq_df, 'by-drink')
 
-final_df.to_csv('tf_idf_Soren.tsv', sep="\t")
+final_df.to_excel('tf_idf_Soren2.xlsx', index_label='file_id')
