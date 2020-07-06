@@ -1,2 +1,18 @@
 # DH_collab
 The show and tell for code from our similar but different DH group projects.
+
+
+Remember to credit people and write your names on what you make <3
+
+## Description of contents
+
+**clustering_documents**
+This very much a work in progress. An attempt to use a kmeans clustering algorithm on parts of the OB corpus
+
+**tf-idf**
+Contains a notebook which can pass a multiword search query (in regex patterns) on any amount of the OB corpus.
+It calculates some basic statistics for word frequencies and finally computes tf-idf for the search terms in the retrieved documents (this is still to be completed).
+
+
+**speech**
+Quirine's work on speech extraction and gender-identification?
