@@ -154,11 +154,4 @@ final_df = get_tf_idf(final_df, freq_df, 'booz')
 final_df = get_tf_idf(final_df, freq_df, 'drunkard')
 #final_df = get_tf_idf(final_df, freq_df, 'by-drink')
 
-# two ways of getting either the arithmetical average:
-#average = (final_df.iloc[:, 3:].sum(axis=1) / len((final_df.iloc[:, 3:].columns)))
-
-#or the statistical mean
-
-final_df.iloc[:, 3:].mean(axis=1)  # the statistical mean
-
 final_df.to_excel('tf_idf_Soren2.xlsx', index_label='file_id')
