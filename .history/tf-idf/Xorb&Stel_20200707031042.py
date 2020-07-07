@@ -155,7 +155,7 @@ final_df = get_tf_idf(final_df, freq_df, 'drunkard')
 #final_df = get_tf_idf(final_df, freq_df, 'by-drink')
 
 # depending where the terms begin in your df, getting the mean is done by:
-#final_df.iloc[:, 2:].mean(axis=1)  # the statistical mean
+
 # and the average by:
 average = (final_df.iloc[:, 2:].sum(axis=1) /len((final_df.iloc[:, 2:].columns)))
 
