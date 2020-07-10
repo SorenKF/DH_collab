@@ -16,3 +16,7 @@ It calculates some basic statistics for word frequencies and finally computes tf
 
 **speech**
 Quirine's work on speech extraction and gender-identification?
+
+
+***occupation***
+Vivian's code for extracting occupations (pre- and post-1834), accounting for the change in formatting. Sparql script (found in txt file) works better than the XML code.
