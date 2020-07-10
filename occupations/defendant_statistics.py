@@ -1,3 +1,5 @@
+#NOTE THAT THE VICTIM CODE IS MORE CLEAR SO IF YOU DON'T GET THIS GO THERE :)
+
 # Import packages
 import logging
 import os
